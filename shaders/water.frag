@@ -20,7 +20,7 @@ void main()
         texture(waterTex, uv).rgb;
 
     vec3 waterTint =
-        vec3(0.35, 0.75, 1.0);
+        vec3(0.2, 0.5, 0.75);
 
     tex *= waterTint;
 
@@ -43,12 +43,12 @@ void main()
         pow(max(dot(viewDir, reflectDir),0.0),64.0);
 
     lighting +=
-        vec3(1.0) * spec * 0.25;
+        vec3(1.0) * spec * 0.08;
 
     float foam =
         smoothstep(0.07,0.11,Height);
 
-    lighting += foam * 0.12;
+    lighting += foam * 0.04;
 
     FragColor = vec4(lighting,1.0);
 }
